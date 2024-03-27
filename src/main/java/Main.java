@@ -7,7 +7,7 @@ public class Main {
         try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/sakila", "alumno", "alumno")) {
             FilmSQL filmSQL = new FilmSQL(connection);
 
-            // filmSQL.selectSQLStatement();
+            filmSQL.selectSQLStatement();
 
             // filmSQL.selectSQLWithMetaData();
 
@@ -18,8 +18,8 @@ public class Main {
             // int id = filmSQL.insertSQL("DAW DAW DAW", 1);
             // System.out.printf("id " + id);
 
-            filmSQL.transaction("DAW transacción 1", "DAW transacción 2", 1);
-            filmSQL.selectSQLPreparedStatement("DAW");
+            // filmSQL.transaction("DAW transacción 1", "DAW transacción 2", 1);
+            // filmSQL.selectSQLPreparedStatement("DAW");
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
